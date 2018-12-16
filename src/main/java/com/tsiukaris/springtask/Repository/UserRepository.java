@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-//I know how to use JPA standard implementation or Hibernate to work with DB, Spring Data is just faster for me
+//I know how to use JPA default implementation or Hibernate to work with DB, Spring Data is just faster for me
 //You can check it in my website project on github
 
 @Repository

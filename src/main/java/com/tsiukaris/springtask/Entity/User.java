@@ -11,6 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -62,5 +63,31 @@ public class User {
     @JsonIgnore
     public String getPassword(){
         return this.password;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if(this == o) return true;
+        if(o == null || getClass() != o.getClass()) return true;
+        User user = (User) o;
+        return email.equals(user.email) &&
+                lastName.equals(user.lastName) &&
+                firstName.equals(user.firstName) &&
+                password.equals(user.password) &&
+                birthday.equals(user.birthday);
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(lastName, firstName, email, password, birthday);
+    }
+
+    @Override
+    public String toString(){
+        return "User: id = " + id +
+                " Last Name = " + lastName +
+                " First Name = " + firstName +
+                " Email = " + email +
+                " Birthday = " + birthday;
     }
 }
