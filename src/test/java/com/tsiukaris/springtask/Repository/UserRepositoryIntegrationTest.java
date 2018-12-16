@@ -37,15 +37,7 @@ public class UserRepositoryIntegrationTest {
         User found = userRepository.findByEmail(olga.getEmail()).get();
 
         //then
-        assertThat(found.getLastName())
-                .isEqualTo(olga.getLastName());
-        assertThat(found.getFirstName())
-                .isEqualTo(olga.getFirstName());
-        assertThat(found.getBirthday())
-                .isEqualTo(olga.getBirthday());
-        assertThat(found.getEmail())
-                .isEqualTo(olga.getEmail());
-        assertThat(found.getPassword())
-                .isEqualTo(olga.getPassword());
+        assertThat(found)
+                .isEqualTo(olga);
     }
 }
